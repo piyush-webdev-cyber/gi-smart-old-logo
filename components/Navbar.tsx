@@ -125,7 +125,7 @@ const Navbar = () => {
             : 'bg-white/60 backdrop-blur-md'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full pl-0 pr-4 sm:px-6 lg:px-0">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             {/* <Link href="/" className="flex items-center gap-3">
@@ -135,11 +135,11 @@ const Navbar = () => {
                 className="h-20 w-auto object-contain"
               />
             </Link> */}
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center flex-shrink-0">
   <img 
     src="/gi-france-removebg-preview.png" 
     alt="GI-SMART Logo" 
-    className="h-24 w-auto m-0 p-0 object-contain"
+      className="h-20 sm:h-20 md:h-20 w-auto object-contain"
   />
 </Link>
 
@@ -292,8 +292,8 @@ const Navbar = () => {
               style={{ position: 'fixed' }}
             >
                 {/* Mobile Menu Header */}
-                <div className="flex items-center justify-between px-4 py-4 border-b border-gray-200 bg-white flex-shrink-0">
-                  <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <div className="flex items-center justify-between py-4 border-b border-gray-200 bg-white flex-shrink-0">
+                  <Link href="/" className="flex items-center mr-auto" onClick={() => setIsMobileMenuOpen(false)}>
                     <img 
                       src="/gi-france-removebg-preview.png" 
                       alt="GI-SMART Logo" 
