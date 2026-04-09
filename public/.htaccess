@@ -1,0 +1,23 @@
+# Next.js static export – GoDaddy/Apache
+# Refresh / direct URL pe 500 na aaye, har route sahi file serve ho
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Real file (e.g. .html, .js, .css) – waise hi serve karo
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Real directory (e.g. /contact/) – usmein index.html serve karo
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Bina trailing slash / bina extension wale path → usmein /index.html (e.g. /contact → /contact/index.html)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^.]*[^/])$ $1/index.html [L]
+</IfModule>
+
+# Agar 404.html upload kiya ho to uncomment karo (500 avoid):
+# ErrorDocument 404 /404.html
